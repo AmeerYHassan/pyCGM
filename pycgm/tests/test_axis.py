@@ -11,12 +11,11 @@ nan_3d = [np.nan, np.nan, np.nan]
 class TestUpperBodyAxis:
     @pytest.mark.parametrize(
         [
-            "rsho", "lsho", "relb", "lelb", "rwra", "rwrb", "lwra", "lwrb", "shoulderJC", "r_elbow_width", "l_elbow_width", "r_wrist_width", "l_wrist_width", "mm", "mockReturnVal", "expectedMockArgs", "expected",
+            "relb", "lelb", "rwra", "rwrb", "lwra", "lwrb", "shoulderJC", "r_elbow_width", "l_elbow_width", "r_wrist_width", "l_wrist_width", "mm", "mockReturnVal", "expectedMockArgs", "expected",
         ],
         [
             # Test from running sample data
             (
-                np.array([428.88476562, 270.552948, 1500.73010254]), np.array([68.24668121, 269.01049805, 1510.1072998]),
                 np.array([658.90338135, 326.07580566, 1285.28515625]), np.array([-156.32162476, 335.2583313, 1287.39916992]),
                 np.array([776.51898193, 495.68103027, 1108.38464355]), np.array([830.9072876, 436.75341797, 1119.11901855]),
                 np.array([-249.28146362, 525.32977295, 1117.09057617]), np.array([-311.77532959, 477.22512817, 1125.1619873]),
@@ -65,8 +64,7 @@ class TestUpperBodyAxis:
             ),
             # Test with zeros for all params
             (
-                np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]),
-                np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]),
+                np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]),
                 
                 [np.array([[1.0, 0.0, 0.0, 0.0],
                             [0.0, 1.0, 0.0, 0.0],
@@ -104,8 +102,7 @@ class TestUpperBodyAxis:
             ),
             # Testing when values are added to frame
             (
-                np.array([9, -7, -6]), np.array([3, -8, 5]), np.array([-9, 1, -4]), np.array([-4, 1, -6]),
-                np.array([2, -3, 9]), np.array([-4, -2, -7]), np.array([-9, 1, -1]), np.array([-3, -4, -9]),
+                np.array([-9, 1, -4]), np.array([-4, 1, -6]), np.array([2, -3, 9]), np.array([-4, -2, -7]), np.array([-9, 1, -1]), np.array([-3, -4, -9]),
                 
                 [np.array([[1.0, 0.0, 0.0, 0.0],
                            [0.0, 1.0, 0.0, 0.0],
@@ -143,8 +140,7 @@ class TestUpperBodyAxis:
             ),
             # Testing when values are added to shoulderJC
             (
-                np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]),
-                np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]),
+                np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]),
 
                 [np.array([[1.0, 0.0, 0.0, -2.0],
                            [0.0, 1.0, 0.0, -8.0],
@@ -182,8 +178,7 @@ class TestUpperBodyAxis:
             ),
             # Testing when values are added to vsk
             (
-                np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]),
-                np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]),
+                np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]),
 
                 [np.array([[1.0, 0.0, 0.0, 0.0],
                            [0.0, 1.0, 0.0, 0.0],
@@ -221,8 +216,7 @@ class TestUpperBodyAxis:
             ),
             # Testing when values are added to mockReturnVal
             (
-                np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]),
-                np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]),
+                np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]), np.array([0, 0, 0]),
 
                 [np.array([[1.0, 0.0, 0.0, 0.0],
                            [0.0, 1.0, 0.0, 0.0],
@@ -260,8 +254,7 @@ class TestUpperBodyAxis:
             ),
             # Testing when values are added to frame and thorax
             (
-                np.array([9, -7, -6]), np.array([3, -8, 5]), np.array([-9, 1, -4]), np.array([-4, 1, -6]),
-                np.array([2, -3, 9]), np.array([-4, -2, -7]), np.array([-9, 1, -1]), np.array([-3, -4, -9]),
+                np.array([-9, 1, -4]), np.array([-4, 1, -6]), np.array([2, -3, 9]), np.array([-4, -2, -7]), np.array([-9, 1, -1]), np.array([-3, -4, -9]),
                 
                 [np.array([[1.0, 0.0, 0.0, 0.0],
                            [0.0, 1.0, 0.0, 0.0],
@@ -299,8 +292,7 @@ class TestUpperBodyAxis:
             ),
             # Testing when values are added to frame, thorax, and shoulderJC
             (
-                np.array([9, -7, -6]), np.array([3, -8, 5]), np.array([-9, 1, -4]), np.array([-4, 1, -6]),
-                np.array([2, -3, 9]), np.array([-4, -2, -7]), np.array([-9, 1, -1]), np.array([-3, -4, -9]),
+                np.array([-9, 1, -4]), np.array([-4, 1, -6]), np.array([2, -3, 9]), np.array([-4, -2, -7]), np.array([-9, 1, -1]), np.array([-3, -4, -9]),
 
                 [np.array([[1.0, 0.0, 0.0, -2.0],
                            [0.0, 1.0, 0.0, -8.0],
@@ -338,8 +330,7 @@ class TestUpperBodyAxis:
             ),
             # Testing when values are added to frame, thorax, shoulderJC, and vsk
             (
-                np.array([9, -7, -6]), np.array([3, -8, 5]), np.array([-9, 1, -4]), np.array([-4, 1, -6]),
-                np.array([2, -3, 9]), np.array([-4, -2, -7]), np.array([-9, 1, -1]), np.array([-3, -4, -9]),
+                np.array([-9, 1, -4]), np.array([-4, 1, -6]), np.array([2, -3, 9]), np.array([-4, -2, -7]), np.array([-9, 1, -1]), np.array([-3, -4, -9]),
                 
                 [np.array([[1.0, 0.0, 0.0, -2.0],
                            [0.0, 1.0, 0.0, -8.0],
@@ -377,8 +368,7 @@ class TestUpperBodyAxis:
             ),
             # Testing when values are added to frame, thorax, shoulderJC, vsk and mockReturnVal
             (
-                np.array([9, -7, -6]), np.array([3, -8, 5]), np.array([-9, 1, -4]), np.array([-4, 1, -6]),
-                np.array([2, -3, 9]), np.array([-4, -2, -7]), np.array([-9, 1, -1]), np.array([-3, -4, -9]),
+                np.array([-9, 1, -4]), np.array([-4, 1, -6]), np.array([2, -3, 9]), np.array([-4, -2, -7]), np.array([-9, 1, -1]), np.array([-3, -4, -9]),
 
                 [np.array([[1.0, 0.0, 0.0, -2.0],
                            [0.0, 1.0, 0.0, -8.0],
@@ -416,8 +406,7 @@ class TestUpperBodyAxis:
             ),
             # Testing that when frame, thorax, and shoulderJC are list of ints and vsk values are ints
             (
-                np.array([9, -7, -6]), np.array([3, -8, 5]), np.array([-9, 1, -4]), np.array([-4, 1, -6]),
-                np.array([2, -3, 9]), np.array([-4, -2, -7]), np.array([-9, 1, -1]), np.array([-3, -4, -9]),
+                np.array([-9, 1, -4]), np.array([-4, 1, -6]), np.array([2, -3, 9]), np.array([-4, -2, -7]), np.array([-9, 1, -1]), np.array([-3, -4, -9]),
 
                 [np.array([[1.0, 0.0, 0.0, -2.0],
                            [0.0, 1.0, 0.0, -8.0],
@@ -455,8 +444,8 @@ class TestUpperBodyAxis:
             ),
             # Testing that when frame, thorax, and shoulderJC are a numpy array of ints and vsk values are ints
             (
-                np.array([9, -7, -6], dtype="int"), np.array([3, -8, 5], dtype="int"), np.array([-9, 1, -4], dtype="int"),
-                np.array([-4, 1, -6], dtype="int"), np.array([2, -3, 9], dtype="int"), np.array([-4, -2, -7], dtype="int"),
+                np.array([-9, 1, -4], dtype="int"), np.array([-4, 1, -6], dtype="int"), 
+                np.array([2, -3, 9], dtype="int"), np.array([-4, -2, -7], dtype="int"),
                 np.array([-9, 1, -1], dtype="int"), np.array([-3, -4, -9], dtype="int"),
                 
                 [np.array([[1.0, 0.0, 0.0, -2.0],
@@ -495,8 +484,7 @@ class TestUpperBodyAxis:
             ),
             # Testing that when frame, thorax, and shoulderJC are a list of floats and vsk values are floats
             (
-                [9.0, -7.0, -6.0], [3.0, -8.0, 5.0], [-9.0, 1.0, -4.0], [-4.0, 1.0, -6.0],
-                [2.0, -3.0, 9.0], [-4.0, -2.0, -7.0], [-9.0, 1.0, -1.0], [-3.0, -4.0, -9.0],
+                [-9.0, 1.0, -4.0], [-4.0, 1.0, -6.0], [2.0, -3.0, 9.0], [-4.0, -2.0, -7.0], [-9.0, 1.0, -1.0], [-3.0, -4.0, -9.0],
 
                 [np.array([[1.0, 0.0, 0.0, -2.0],
                            [0.0, 1.0, 0.0, -8.0],
@@ -534,9 +522,8 @@ class TestUpperBodyAxis:
             ),
             # Testing that when frame, thorax, and shoulderJC are a numpy array of floats and vsk values are floats
             (
-                np.array([9.0, -7.0, -6.0], dtype="float"), np.array([3.0, -8.0, 5.0], dtype="float"), np.array([-9.0, 1.0, -4.0], dtype="float"),
-                np.array([-4.0, 1.0, -6.0], dtype="float"), np.array([2.0, -3.0, 9.0], dtype="float"), np.array([-4.0, -2.0, -7.0], dtype="float"),
-                np.array([-9.0, 1.0, -1.0], dtype="float"), np.array([-3.0, -4.0, -9.0], dtype="float"),
+                np.array([-9.0, 1.0, -4.0], dtype="float"), np.array([-4.0, 1.0, -6.0], dtype="float"), np.array([2.0, -3.0, 9.0], dtype="float"), 
+                np.array([-4.0, -2.0, -7.0], dtype="float"), np.array([-9.0, 1.0, -1.0], dtype="float"), np.array([-3.0, -4.0, -9.0], dtype="float"),
                 
                 [np.array([[1.0, 0.0, 0.0, -2.0],
                            [0.0, 1.0, 0.0, -8.0],
@@ -573,10 +560,10 @@ class TestUpperBodyAxis:
         ])],
     )
     def test_elbow_axis(
-        self, rsho, lsho, relb, lelb, rwra, rwrb, lwra, lwrb, shoulderJC, r_elbow_width, l_elbow_width, r_wrist_width, l_wrist_width, mm, mockReturnVal, expectedMockArgs, expected,
+        self, relb, lelb, rwra, rwrb, lwra, lwrb, shoulderJC, r_elbow_width, l_elbow_width, r_wrist_width, l_wrist_width, mm, mockReturnVal, expectedMockArgs, expected,
     ):
         """
-        This test provides coverage of the elbow_axis function in pyCGM.py, defined as elbow_axis(rsho, lsho, relb, lelb, rwra, rwrb, lwra, lwrb, shoulderJC, r_elbow_width, l_elbow_width, r_wrist_width, l_wrist_width)
+        This test provides coverage of the elbow_axis function in pyCGM.py, defined as elbow_axis(relb, lelb, rwra, rwrb, lwra, lwrb, shoulderJC, r_elbow_width, l_elbow_width, r_wrist_width, l_wrist_width)
 
         This test takes 7 parameters:
         frame: dictionary of marker lists
@@ -601,7 +588,7 @@ class TestUpperBodyAxis:
             axis, "find_joint_center", side_effect=mockReturnVal
         ) as mock_find_joint_center:
             result = axis.elbow_axis(
-                rsho, lsho, relb, lelb, rwra, rwrb, lwra, lwrb, shoulderJC, r_elbow_width, l_elbow_width, r_wrist_width, l_wrist_width, mm
+                relb, lelb, rwra, rwrb, lwra, lwrb, shoulderJC, r_elbow_width, l_elbow_width, r_wrist_width, l_wrist_width, mm
             )
 
         # Asserting that there were only 2 calls to find_joint_center
